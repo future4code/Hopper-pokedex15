@@ -3,7 +3,7 @@
 Nome dos integrantes: 
 - Pessoa 1
 - Pessoa 2
-- Pedro Paulo Souza Silva Junior
+- Pedro Paulo Jr
 
 Link do Surge: www.link.com.br
 
