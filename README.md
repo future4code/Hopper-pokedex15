@@ -1,8 +1,8 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
 - Lucas Ferreira
+- Mariana Abdias
 - Pedro Paulo Jr
 
 Link do Surge: www.link.com.br
