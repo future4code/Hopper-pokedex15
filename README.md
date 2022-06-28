@@ -2,7 +2,7 @@
 
 Nome dos integrantes: 
 - Pessoa 1
-- Pessoa 2
+- Lucas Ferreira
 - Pedro Paulo Jr
 
 Link do Surge: www.link.com.br
