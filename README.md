@@ -3,7 +3,7 @@
 Nome dos integrantes: 
 - Lucas Ferreira
 - Mariana Abdias
-- Pedro Paulo Jr
+- Pedro Souza Jr
 
 Link do Surge: www.link.com.br
 
