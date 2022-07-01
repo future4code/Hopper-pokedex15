@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&display=swap');
+
+/* .App {
+  text-align: center;
+} */
+
+/* Geral */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Open Sans;
+}
+
+/* Home Page */
+
+.home-page {
+  background-image: url(./images/pokemon-home.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.home-page > button {
+  padding: 20px 60px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: auto;
+  right: 42%;
+  position: fixed;
+  top: 75%;
+  font-weight: 600;
+  max-width: 100%;
+  color: white;
+  background-color: #306cb2;
+  border: 4px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.home-page > button:hover {
+  color: white;
+  background-color: #feca05;
+  border: 4px solid white;
+}
+
+/* Header Pages */
+
+.header-pages {
+  background-color: #3560ac;
+  height: 13vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-pages > img {
+  margin-top: 3%;
+}
+
+.header-pages .header-botoes {
+  display: flex;
+  gap: 50px;
+}
+
+.header-pages .header-botoes > button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: auto;
+  max-width: 100%;
+  color: white;
+  background-color: #306cb2;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-pages .header-botoes > button:hover {
+  color: white;
+  background-color: #feca05;
+  border: 2px solid white;
+}
+
+.header-pages .logo-img {
+  max-width: 20rem;
+}
+
+/* Cards */
+
+.area-cards {
+  margin: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.card {
+  display: flex;
+
+  align-items: flex-end;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 35vh;
+  max-width: 22vw;
+}
+
+.card .buttons-card .button {
+  padding: 5px 5px 0 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
