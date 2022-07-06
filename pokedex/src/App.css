@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&display=swap');
 
-/* .App {
-  text-align: center;
-} */
-
 /* Geral */
 * {
   padding: 0;
@@ -91,30 +87,66 @@
 
 /* Cards */
 
-.area-cards {
-  margin: 4rem 3rem;
+main {
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
-
+  justify-content: center;
+  gap: 5px;
   flex-wrap: wrap;
-  gap: 3rem;
+}
+
+.area-cards {
+  margin: 10px;
+  height: 30vh;
+  width: 230px;
+
+  display: grid;
+  grid-template-rows: 80% 20%;
+}
+
+.area-cards:hover {
+  transform: translateY(-2px);
 }
 
 .card {
   display: flex;
-
-  align-items: flex-end;
-  border: 1px solid black;
+  justify-content: center;
+  background-color: rgb(166, 192, 214);
   border-radius: 10px;
-  height: 35vh;
+  height: 30vh;
   max-width: 22vw;
 }
 
-.card .buttons-card .button {
-  padding: 5px 5px 0 0;
-  font-size: 1rem;
+.area-cards .buttons-card {
+  display: flex;
+  justify-content: center;
+}
+
+.area-cards button {
+  width: 100%;
+  height: 50px;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 0.1px solid rgb(166, 192, 214);
   cursor: pointer;
+}
+
+.area-cards .buttons-card .button-esquerdo {
+  border-radius: 0 0 0 10px;
+  background-color: #306cb2;
+  color: white;
+}
+
+.area-cards .buttons-card .button-esquerdo:hover {
+  background-color: #3560ac;
+}
+
+.area-cards .buttons-card .button-direito {
+  border-radius: 0 0 10px 0;
+  background-color: #306cb2;
+  color: white;
+}
+
+.area-cards .buttons-card .button-direito:hover {
+  background-color: #3560ac;
 }

@@ -17,9 +17,9 @@ const PokedexPage = () => {
           </button>
         </div>
       </header>
-      <CardPokemon
+      {/* <CardPokemon
         pagina={'pokedex'}
-      />
+      /> */}
     </div>
   )
 }
