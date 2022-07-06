@@ -6,21 +6,27 @@ function CardPokemonList(props) {
   const navigate = useNavigate()
 
   return (
-    <div className="area-cards">
-      <div className="card">
-        <img src=""></img>
-        <p>{props.pokemon.name}</p>
+    <main>
+      <div className="area-cards">
+        <div className="card">
+          <img src=""></img>
+          <p>{props.pokemon.name}</p>
+        </div>
         <div className="buttons-card">
-          {props.pagina === 'pokedex' ? 
-            <button className="button">Remover da Pokedex</button>
-          : <button className="button">Adicionar a Pokedex</button>
-          }
-          <button className="button"onClick={() => goToListDetailsPokemonPage(navigate)}>
+          {props.pagina === 'pokedex' ? (
+            <button className="button-esquerdo">Remover da Pokedex</button>
+          ) : (
+            <button className="button-esquerdo">Adicionar a Pokedex</button>
+          )}
+          <button
+            className="button-direito"
+            onClick={() => goToListDetailsPokemonPage(navigate)}
+          >
             Ver Detalhes
           </button>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
