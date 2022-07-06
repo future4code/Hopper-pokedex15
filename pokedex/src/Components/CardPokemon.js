@@ -9,6 +9,7 @@ function CardPokemonList(props) {
     <div className="area-cards">
       <div className="card">
         <img src=""></img>
+        <p>{props.pokemon.name}</p>
         <div className="buttons-card">
           {props.pagina === 'pokedex' ? 
             <button className="button">Remover da Pokedex</button>

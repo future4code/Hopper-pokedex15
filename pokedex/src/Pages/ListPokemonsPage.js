@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CardPokemon from '../Components/CardPokemon'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,10 +9,13 @@ import { useRequestData } from '../Hooks/useRequestData'
 
 const ListPokemonsPage = () => {
   const navigate = useNavigate()
-  const pokemons = useRequestData(`https://pokeapi.co/api/v2/pokemon/?limit=151`)
-  const listaDePokemons = pokemons.results.map((dado) => {
+  // const [pokemons,setPokemons] = useState([])
+  const pokemons = useRequestData([],"https://pokeapi.co/api/v2/pokemon/?limit=151")
+  console.log(pokemons)
+
+  const listaDePokemons = pokemons && pokemons.map((dado) => {
     return <CardPokemon
-      nome={dado}
+      pokemon={dado}
       pagina={'pokemons'}
     />
   })
