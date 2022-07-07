@@ -6,6 +6,13 @@ import { goToListPokemonsPage } from '../routes/coordinator'
 
 const PokedexPage = () => {
   const navigate = useNavigate()
+  const pokemons = []
+  const listaDePokemons = pokemons && pokemons.map((dado) => {
+    return <CardPokemon
+      pokemon={dado}
+      pagina={'pokedex'}
+    />
+  })
 
   return (
     <div>
@@ -17,9 +24,7 @@ const PokedexPage = () => {
           </button>
         </div>
       </header>
-      {/* <CardPokemon
-        pagina={'pokedex'}
-      /> */}
+      {listaDePokemons}
     </div>
   )
 }

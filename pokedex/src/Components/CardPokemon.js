@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToListDetailsPokemonPage } from '../routes/coordinator'
+import { useContext } from 'react'
+import GlobalStateContext from '../Global/GlobalStateContext'
+import axios from 'axios'
 
-function CardPokemonList(props) {
+function CardPokemon(props) {
   const navigate = useNavigate()
+  const {states,setters,requests} = useContext(GlobalStateContext)
+
+  const verDetalhes = () => {
+    requests.getDetails(props.nome)
+    goToListDetailsPokemonPage(navigate)
+  }
 
   return (
     <main>
       <div className="area-cards">
         <div className="card">
-          <img src=""></img>
-          <p>{props.pokemon.name}</p>
+          <img src={props.imagem}/>
+          <p>{props.nome}</p>
         </div>
         <div className="buttons-card">
           {props.pagina === 'pokedex' ? (
@@ -20,7 +29,7 @@ function CardPokemonList(props) {
           )}
           <button
             className="button-direito"
-            onClick={() => goToListDetailsPokemonPage(navigate)}
+            onClick={() => verDetalhes()}
           >
             Ver Detalhes
           </button>
@@ -30,4 +39,4 @@ function CardPokemonList(props) {
   )
 }
 
-export default CardPokemonList
+export default CardPokemon

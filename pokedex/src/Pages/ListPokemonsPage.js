@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CardPokemon from '../Components/CardPokemon'
 import { useNavigate } from 'react-router-dom'
 
 // Imagens importadas
 import logo from '../images/pokemon-logo.png'
 import { goToHomePage, goToPokedexPage } from '../routes/coordinator'
-import { useRequestData } from '../hooks/useRequestData'
+import GlobalStateContext from '../Global/GlobalStateContext'
 
 const ListPokemonsPage = () => {
   const navigate = useNavigate()
-  // const [pokemons,setPokemons] = useState([])
-  const pokemons = useRequestData(
-    [],
-    'https://pokeapi.co/api/v2/pokemon/?limit=151'
-  )
-  console.log(pokemons)
+  const {states,setters,requests} = useContext(GlobalStateContext)
+  
+  useEffect(() => {
+    requests.getNomes()
+    requests.getPokemons()
+  },[])
+
+  console.log(states.pokemons)
+
+  const listaDePokemons = states.pokemons && states.pokemons.map((dado,index,array) => {
+    return <CardPokemon
+      nome={dado.name}
+      imagem={dado.sprites.front_default}
+      pagina={'pokemons'}
+    />
+  })
 
   return (
     <div>
@@ -26,13 +36,7 @@ const ListPokemonsPage = () => {
         </div>
       </header>
       <main>
-        {' '}
-        {pokemons &&
-          pokemons.map(dado => {
-            return (
-              <CardPokemon key={dado.name} pokemon={dado} pagina={'pokemons'} />
-            )
-          })}
+        {listaDePokemons}        
       </main>
     </div>
   )

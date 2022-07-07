@@ -6,7 +6,7 @@ export function useRequestData(type, url){
 
     useEffect(() => {
         axios.get(url)
-        .then((response) => setData(response.data.results))
+        .then((response) => setData(response.data))
         .catch((err) => console.log(err.response))
     }, [url])
 
