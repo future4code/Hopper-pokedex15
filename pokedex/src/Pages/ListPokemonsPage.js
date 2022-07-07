@@ -30,12 +30,14 @@ const ListPokemonsPage = () => {
     <div>
       <header className="header-pages">
         <img className="logo-img" src={logo} alt="Logotipo do Pokemon" />
-        <div className='header-botoes'>
+        <div className="header-botoes">
           <button onClick={() => goToHomePage(navigate)}>Início</button>
           <button onClick={() => goToPokedexPage(navigate)}>Pokedex</button>
         </div>
       </header>
-      {listaDePokemons}
+      <main>
+        {listaDePokemons}        
+      </main>
     </div>
   )
 }

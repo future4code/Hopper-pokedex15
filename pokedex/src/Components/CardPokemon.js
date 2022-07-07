@@ -15,21 +15,27 @@ function CardPokemon(props) {
   }
 
   return (
-    <div className="area-cards">
-      <div className="card">
-        <img src={props.imagem}/>
-        <p>{props.nome}</p>
+    <main>
+      <div className="area-cards">
+        <div className="card">
+          <img src={props.imagem}/>
+          <p>{props.nome}</p>
+        </div>
         <div className="buttons-card">
-          {props.pagina === 'pokedex' ? 
-            <button className="button">Remover da Pokedex</button>
-          : <button className="button">Adicionar a Pokedex</button>
-          }
-          <button className="button"onClick={() => verDetalhes()}>
+          {props.pagina === 'pokedex' ? (
+            <button className="button-esquerdo">Remover da Pokedex</button>
+          ) : (
+            <button className="button-esquerdo">Adicionar a Pokedex</button>
+          )}
+          <button
+            className="button-direito"
+            onClick={() => verDetalhes()}
+          >
             Ver Detalhes
           </button>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
