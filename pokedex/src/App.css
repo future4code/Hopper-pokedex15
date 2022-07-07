@@ -110,11 +110,19 @@ main {
 
 .card {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
   background-color: rgb(166, 192, 214);
   border-radius: 10px;
   height: 30vh;
   max-width: 22vw;
+}
+
+.card img {
+  margin-top: -18%;
+  bottom: 5px;
+  width: 10vw;
 }
 
 .area-cards .buttons-card {
