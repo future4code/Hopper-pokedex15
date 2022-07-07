@@ -19,7 +19,7 @@ function CardPokemon(props) {
       <div className="area-cards">
         <div className="card">
           <img src={props.imagem}/>
-          <p>{props.nome}</p>
+          {/* <p>{props.nome}</p> */}
         </div>
         <div className="buttons-card">
           {props.pagina === 'pokedex' ? (
