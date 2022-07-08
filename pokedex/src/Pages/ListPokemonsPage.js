@@ -11,12 +11,6 @@ const ListPokemonsPage = () => {
   const navigate = useNavigate()
   const { states, setters, requests } = useContext(GlobalStateContext)
 
-  useEffect(() => {
-    requests.getNomes()
-    requests.getPokemons()
-  }, [])
-
-
   const listaDePokemons = states.pokemons && states.pokemons.map((dado,index,array) => {
     return <CardPokemon
       key={index}
