@@ -42,6 +42,36 @@ const GlobalState = props => {
     }
   }
 
+  const addPokedex = dado => {
+    const listaPokedex = pokedex
+
+    listaPokedex.push(dado)
+
+    const orderListPokedex = listaPokedex.sort((a, b) => {
+        if (a.id > b.id) {
+          return 1
+        }
+        if (a.id < b.id) {
+          return -1
+        }
+        return 0
+      })
+    setPokedex(orderListPokedex)
+  }
+
+  const rmPokedex = dado => {
+    const listaPokedex = pokedex.filter((item,index,array)=>{
+        return (item.id !== dado.id)
+    })
+
+    // listaPokedex.filter((item,index,array)=>{
+    //     return (item.id !== dado.id)
+    // })
+    
+    console.log(listaPokedex)
+    setPokedex(listaPokedex)
+  }
+
   const getDetails = nome => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${nome}`)
@@ -52,9 +82,10 @@ const GlobalState = props => {
   const states = { nomes, pokemons, pokedex, detalhes }
   const setters = { setNomes, setPokemons, setPokedex, setDetalhes }
   const requests = { getNomes, getPokemons, getDetails }
+  const funcoes = {addPokedex,rmPokedex}
 
   return (
-    <GlobalStateContext.Provider value={{ states, setters, requests }}>
+    <GlobalStateContext.Provider value={{ states, setters, requests, funcoes}}>
       {props.children}
     </GlobalStateContext.Provider>
   )

@@ -3,17 +3,23 @@ import CardPokemon from '../Components/CardPokemon'
 import { useNavigate } from 'react-router-dom'
 import logo from '../images/pokemon-logo.png'
 import { goToListPokemonsPage } from '../routes/coordinator'
+import { useContext } from 'react'
+import GlobalStateContext from '../Global/GlobalStateContext'
 
 const PokedexPage = () => {
   const navigate = useNavigate()
-  const pokemons = []
-  const listaDePokemons = pokemons && pokemons.map((dado) => {
+  const {states,setters,requests} = useContext(GlobalStateContext)
+
+  console.log(states.pokedex)
+
+  const listaDaPokedex = states.pokedex && states.pokedex.map((dado,index,array) => {
     return <CardPokemon
-      pokemon={dado}
+      nome={dado.name}
+      imagem={dado.sprites.front_default}
+      dado={dado}
       pagina={'pokedex'}
     />
   })
-
   return (
     <div>
       <header className="header-pages">
@@ -24,7 +30,7 @@ const PokedexPage = () => {
           </button>
         </div>
       </header>
-      {listaDePokemons}
+      {listaDaPokedex}
     </div>
   )
 }

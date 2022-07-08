@@ -16,12 +16,11 @@ const ListPokemonsPage = () => {
     requests.getPokemons()
   },[])
 
-  console.log(states.pokemons)
-
   const listaDePokemons = states.pokemons && states.pokemons.map((dado,index,array) => {
     return <CardPokemon
       nome={dado.name}
       imagem={dado.sprites.front_default}
+      dado={dado}
       pagina={'pokemons'}
     />
   })
