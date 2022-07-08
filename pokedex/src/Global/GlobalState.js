@@ -57,6 +57,13 @@ const GlobalState = props => {
         return 0
       })
     setPokedex(orderListPokedex)
+
+    //Atualiza Pokemons
+    const listaPokemons = pokemons.filter((item,index,array)=>{
+      return (item.id !== dado.id)
+    })
+
+    setPokemons(listaPokemons)
   }
 
   const rmPokedex = dado => {
@@ -64,12 +71,23 @@ const GlobalState = props => {
         return (item.id !== dado.id)
     })
 
-    // listaPokedex.filter((item,index,array)=>{
-    //     return (item.id !== dado.id)
-    // })
-    
-    console.log(listaPokedex)
     setPokedex(listaPokedex)
+
+    //Atualiza Pokemons
+    const listaPokemons = pokemons
+
+    listaPokemons.push(dado)
+
+    const orderListPokemons = listaPokemons.sort((a, b) => {
+        if (a.id > b.id) {
+          return 1
+        }
+        if (a.id < b.id) {
+          return -1
+        }
+        return 0
+      })
+    setPokemons(orderListPokemons)
   }
 
   const getDetails = nome => {
@@ -78,7 +96,6 @@ const GlobalState = props => {
       .then(response => setDetalhes(response.data))
       .catch(err => console.log(err.response.message))
   }
-  console.log(detalhes)
 
   const states = { nomes, pokemons, pokedex, detalhes }
   const setters = { setNomes, setPokemons, setPokedex, setDetalhes }
