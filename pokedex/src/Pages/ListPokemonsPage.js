@@ -16,20 +16,17 @@ const ListPokemonsPage = () => {
     requests.getPokemons()
   }, [])
 
-  console.log(states.pokemons)
 
-  const listaDePokemons =
-    states.pokemons &&
-    states.pokemons.map((dado, index, array) => {
-      return (
-        <CardPokemon
-          key={index}
-          nome={dado.name}
-          imagem={dado.sprites.front_default}
-          pagina={'pokemons'}
-        />
-      )
-    })
+  const listaDePokemons = states.pokemons && states.pokemons.map((dado,index,array) => {
+    return <CardPokemon
+      key={index}
+      nome={dado.name}
+      imagem={dado.sprites.front_default}
+      dado={dado}
+      pagina={'pokemons'}
+    />
+  })
+
 
   return (
     <div>

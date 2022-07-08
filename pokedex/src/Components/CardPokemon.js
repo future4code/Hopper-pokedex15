@@ -7,7 +7,9 @@ import axios from 'axios'
 
 function CardPokemon(props) {
   const navigate = useNavigate()
-  const { states, setters, requests } = useContext(GlobalStateContext)
+
+  const {states,setters,requests,funcoes} = useContext(GlobalStateContext)
+
 
   const verDetalhes = () => {
     requests.getDetails(props.nome)
@@ -23,9 +25,13 @@ function CardPokemon(props) {
         </div>
         <div className="buttons-card">
           {props.pagina === 'pokedex' ? (
-            <button className="button-esquerdo">Remover da Pokedex</button>
+            <button className="button-esquerdo"
+            onClick={() => funcoes.rmPokedex(props.dado)}
+            >Remover da Pokedex</button>
           ) : (
-            <button className="button-esquerdo">Adicionar a Pokedex</button>
+            <button className="button-esquerdo"
+            onClick={() => funcoes.addPokedex(props.dado)}
+            >Adicionar a Pokedex</button>
           )}
           <button className="button-direito" onClick={() => verDetalhes()}>
             Ver Detalhes
