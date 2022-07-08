@@ -8,18 +8,22 @@ import GlobalStateContext from '../Global/GlobalStateContext'
 
 const PokedexPage = () => {
   const navigate = useNavigate()
-  const {states,setters,requests} = useContext(GlobalStateContext)
+  const { states, setters, requests } = useContext(GlobalStateContext)
 
   console.log(states.pokedex)
 
-  const listaDaPokedex = states.pokedex && states.pokedex.map((dado,index,array) => {
-    return <CardPokemon
-      nome={dado.name}
-      imagem={dado.sprites.front_default}
-      dado={dado}
-      pagina={'pokedex'}
-    />
-  })
+  const listaDaPokedex =
+    states.pokedex &&
+    states.pokedex.map((dado, index, array) => {
+      return (
+        <CardPokemon
+          nome={dado.name}
+          imagem={dado.sprites.front_default}
+          dado={dado}
+          pagina={'pokedex'}
+        />
+      )
+    })
   return (
     <div>
       <header className="header-pages">
@@ -30,7 +34,7 @@ const PokedexPage = () => {
           </button>
         </div>
       </header>
-      {listaDaPokedex}
+      <main>{listaDaPokedex}</main>
     </div>
   )
 }
