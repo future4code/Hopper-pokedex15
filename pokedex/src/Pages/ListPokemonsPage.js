@@ -9,21 +9,24 @@ import GlobalStateContext from '../Global/GlobalStateContext'
 
 const ListPokemonsPage = () => {
   const navigate = useNavigate()
-  const {states,setters,requests} = useContext(GlobalStateContext)
-  
+  const { states, setters, requests } = useContext(GlobalStateContext)
+
   useEffect(() => {
     requests.getNomes()
     requests.getPokemons()
-  },[])
+  }, [])
+
 
   const listaDePokemons = states.pokemons && states.pokemons.map((dado,index,array) => {
     return <CardPokemon
+      key={index}
       nome={dado.name}
       imagem={dado.sprites.front_default}
       dado={dado}
       pagina={'pokemons'}
     />
   })
+
 
   return (
     <div>
@@ -34,9 +37,7 @@ const ListPokemonsPage = () => {
           <button onClick={() => goToPokedexPage(navigate)}>Pokedex</button>
         </div>
       </header>
-      <main>
-        {listaDePokemons}        
-      </main>
+      <main>{listaDePokemons}</main>
     </div>
   )
 }

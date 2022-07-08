@@ -76,8 +76,9 @@ const GlobalState = props => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${nome}`)
       .then(response => setDetalhes(response.data))
-      .catch(err => console.log(err.response))
+      .catch(err => console.log(err.response.message))
   }
+  console.log(detalhes)
 
   const states = { nomes, pokemons, pokedex, detalhes }
   const setters = { setNomes, setPokemons, setPokedex, setDetalhes }
