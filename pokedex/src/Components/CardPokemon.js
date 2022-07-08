@@ -7,7 +7,7 @@ import axios from 'axios'
 
 function CardPokemon(props) {
   const navigate = useNavigate()
-  const {states,setters,requests} = useContext(GlobalStateContext)
+  const { states, setters, requests } = useContext(GlobalStateContext)
 
   const verDetalhes = () => {
     requests.getDetails(props.nome)
@@ -15,10 +15,10 @@ function CardPokemon(props) {
   }
 
   return (
-    <main>
+    <main className="main-card">
       <div className="area-cards">
         <div className="card">
-          <img src={props.imagem}/>
+          <img src={props.imagem} />
           {/* <p>{props.nome}</p> */}
         </div>
         <div className="buttons-card">
@@ -27,10 +27,7 @@ function CardPokemon(props) {
           ) : (
             <button className="button-esquerdo">Adicionar a Pokedex</button>
           )}
-          <button
-            className="button-direito"
-            onClick={() => verDetalhes()}
-          >
+          <button className="button-direito" onClick={() => verDetalhes()}>
             Ver Detalhes
           </button>
         </div>

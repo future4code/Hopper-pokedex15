@@ -158,3 +158,95 @@ main {
 .area-cards .buttons-card .button-direito:hover {
   background-color: #3560ac;
 }
+
+/* Details */
+
+.images-details {
+  grid-area: imagens;
+  margin-bottom: 0;
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+.poderes {
+  grid-area: poderes;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+
+  border: 5px solid #feca05;
+  background-color: #fce38c;
+  border-radius: 10px;
+}
+
+.poderes h2,
+.ataques h2 {
+  margin: auto;
+}
+
+.poderes:hover,
+.tipos:hover,
+.ataques:hover {
+  -webkit-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+.tipos {
+  grid-area: tipos;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+
+  border: 5px solid #feca05;
+  background-color: #fce38c;
+  border-radius: 10px;
+}
+.ataques {
+  grid-area: ataques;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+
+  border: 5px solid #feca05;
+  background-color: #fce38c;
+  border-radius: 10px;
+}
+
+.page-detail {
+  display: grid;
+  grid-template-areas:
+    'imagens imagens'
+    'poderes tipos'
+    'poderes ataques';
+  gap: 20px;
+
+  padding: 10px;
+}
+
+.img-detail {
+  width: 15vw;
+}
+
+@keyframes bounce {
+  20% {
+    transform: translateY(-4px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
