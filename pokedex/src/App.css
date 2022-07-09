@@ -89,19 +89,24 @@
 
 main {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  grid-gap: 10px;
+  padding-inline-start: 0;
 }
 
 .area-cards {
-  margin: 10px;
-  height: 30vh;
-  width: 230px;
-
-  display: grid;
-  grid-template-rows: 80% 20%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  align-items: center;
+  list-style: none;
+  color: #222;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
 }
 
 .area-cards:hover {
@@ -109,20 +114,15 @@ main {
 }
 
 .card {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
   align-items: center;
   background-color: rgb(166, 192, 214);
   border-radius: 10px;
-  height: 30vh;
-  max-width: 22vw;
+  max-width: 15vw;
 }
 
 .card img {
-  margin-top: -18%;
-  bottom: 5px;
-  width: 10vw;
+  margin-top: 10%;
+  max-height: 200%;
 }
 
 .area-cards .buttons-card {
@@ -132,7 +132,6 @@ main {
 
 .area-cards button {
   width: 100%;
-  height: 50px;
   font-size: 0.8rem;
   text-transform: uppercase;
   border: 0.1px solid rgb(166, 192, 214);
@@ -229,24 +228,69 @@ main {
     'poderes ataques';
   gap: 20px;
 
-  padding: 10px;
+  padding-right: 400px;
+  padding-left: 400px;
 }
 
 .img-detail {
   width: 15vw;
 }
 
-@keyframes bounce {
-  20% {
-    transform: translateY(-4px);
+@media (max-width: 1024px) {
+  .header-pages .logo-img {
+    max-width: 10rem;
   }
-  40% {
-    transform: translateY(0px);
+  .header-pages {
+    height: 8vh;
   }
-  80% {
-    transform: translateY(-4px);
+  .header-pages .header-botoes > button {
+    padding: 9px 15px;
+
+    font-size: 0.5rem;
   }
-  100% {
-    transform: translateY(0);
+  .header-pages > img {
+    margin-top: 10%;
+  }
+
+  .header-pages .header-botoes {
+    margin-right: 5%;
+  }
+
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    grid-gap: 10px;
+    padding-inline-start: 0;
+  }
+
+  .home-page > button {
+    right: 18%;
+  }
+
+  .header-pages .header-botoes {
+    margin-right: 0%;
+  }
+  .header-pages .header-botoes {
+    gap: 10px;
+  }
+
+  .page-detail {
+    grid-template-areas:
+      'imagens'
+      'poderes'
+      'tipos'
+      'ataques';
+    gap: 20px;
+
+    padding: 40px;
+  }
+  .card {
+    max-width: 100%;
+  }
+
+  .img-detail {
+    width: 30vw;
   }
 }
+
+
