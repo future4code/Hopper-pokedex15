@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### 🚀 Link 
 Para acessar ao site do projeto clique no link abaixo:
-- [Link do Surge](https://cultured-rest.surge.sh/details)
+- [Link do Surge](https://cultured-rest.surge.sh/)
 
 
 ## 🔖 Layout do Projeto
