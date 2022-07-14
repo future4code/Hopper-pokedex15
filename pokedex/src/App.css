@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&display=swap');
+
+/* Geral */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Open Sans;
+}
+
+/* Home Page */
+
+.home-page {
+  background-image: url(./images/pokemon-home.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.home-page > button {
+  padding: 20px 60px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: auto;
+  right: 42%;
+  position: fixed;
+  top: 75%;
+  font-weight: 600;
+  max-width: 100%;
+  color: white;
+  background-color: #306cb2;
+  border: 4px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.home-page > button:hover {
+  color: white;
+  background-color: #feca05;
+  border: 4px solid white;
+}
+
+/* Header Pages */
+
+.header-pages {
+  background-color: #3560ac;
+  height: 13vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-pages > img {
+  margin-top: 3%;
+}
+
+.header-pages .header-botoes {
+  display: flex;
+  gap: 50px;
+}
+
+.header-pages .header-botoes > button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: auto;
+  max-width: 100%;
+  color: white;
+  background-color: #306cb2;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-pages .header-botoes > button:hover {
+  color: white;
+  background-color: #feca05;
+  border: 2px solid white;
+}
+
+.header-pages .logo-img {
+  max-width: 20rem;
+}
+
+/* Cards */
+
+main {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  grid-gap: 10px;
+  padding-inline-start: 0;
+}
+
+.area-cards {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  align-items: center;
+  list-style: none;
+  color: #222;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.area-cards:hover {
+  transform: translateY(-2px);
+}
+
+.card {
+  align-items: center;
+  background-color: rgb(166, 192, 214);
+  border-radius: 10px;
+  max-width: 15vw;
+}
+
+.card img {
+  margin-top: 10%;
+  max-height: 200%;
+}
+
+.area-cards .buttons-card {
+  display: flex;
+  justify-content: center;
+}
+
+.area-cards button {
+  width: 100%;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border: 0.1px solid rgb(166, 192, 214);
+  cursor: pointer;
+}
+
+.area-cards .buttons-card .button-esquerdo {
+  border-radius: 0 0 0 10px;
+  background-color: #306cb2;
+  color: white;
+}
+
+.area-cards .buttons-card .button-esquerdo:hover {
+  background-color: #3560ac;
+}
+
+.area-cards .buttons-card .button-direito {
+  border-radius: 0 0 10px 0;
+  background-color: #306cb2;
+  color: white;
+}
+
+.area-cards .buttons-card .button-direito:hover {
+  background-color: #3560ac;
+}
+
+/* Details */
+
+.images-details {
+  grid-area: imagens;
+  margin-bottom: 0;
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+.poderes {
+  grid-area: poderes;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+
+  border: 5px solid #feca05;
+  background-color: #fce38c;
+  border-radius: 10px;
+}
+
+.poderes h2,
+.ataques h2 {
+  margin: auto;
+}
+
+.poderes:hover,
+.tipos:hover,
+.ataques:hover {
+  -webkit-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+.tipos {
+  grid-area: tipos;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+
+  border: 5px solid #feca05;
+  background-color: #fce38c;
+  border-radius: 10px;
+}
+.ataques {
+  grid-area: ataques;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+
+  border: 5px solid #feca05;
+  background-color: #fce38c;
+  border-radius: 10px;
+}
+
+.page-detail {
+  display: grid;
+  grid-template-areas:
+    'imagens imagens'
+    'poderes tipos'
+    'poderes ataques';
+  gap: 20px;
+
+  padding-right: 400px;
+  padding-left: 400px;
+}
+
+.img-detail {
+  width: 15vw;
+}
+
+@media (max-width: 1024px) {
+  .header-pages .logo-img {
+    max-width: 10rem;
+  }
+  .header-pages {
+    height: 8vh;
+  }
+  .header-pages .header-botoes > button {
+    padding: 9px 15px;
+
+    font-size: 0.5rem;
+  }
+  .header-pages > img {
+    margin-top: 10%;
+  }
+
+  .header-pages .header-botoes {
+    margin-right: 5%;
+  }
+
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    grid-gap: 10px;
+    padding-inline-start: 0;
+  }
+
+  .home-page > button {
+    right: 18%;
+  }
+
+  .header-pages .header-botoes {
+    margin-right: 0%;
+  }
+  .header-pages .header-botoes {
+    gap: 10px;
+  }
+
+  .page-detail {
+    grid-template-areas:
+      'imagens'
+      'poderes'
+      'tipos'
+      'ataques';
+    gap: 20px;
+
+    padding: 40px;
+  }
+  .card {
+    max-width: 100%;
+  }
+
+  .img-detail {
+    width: 30vw;
+  }
+}
+
+
